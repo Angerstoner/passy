@@ -7,7 +7,6 @@ SUBSTITUTIONS = {
         'i' : '!',
         'o' : '0',
         's' : '$',
-        't' : '7'
         }
 
 words = {}
@@ -29,8 +28,8 @@ def substitute(prase, count=4):
     subPhrase = ""
     subsPerWord = 0
     for c in phrase:
-        if c in SUBSTITUTIONS and subsPerWord < 2:
-            subPhrase += SUBSTITUTIONS[c]
+        if c.lower() in SUBSTITUTIONS and subsPerWord < 2:
+            subPhrase += SUBSTITUTIONS[c.lower()]
             subsPerWord += 1
         elif c == ' ':
             subPhrase += c
